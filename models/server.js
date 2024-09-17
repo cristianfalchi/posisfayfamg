@@ -8,7 +8,6 @@ export default class Server {
         this.app = express();
         this.appFirebase = firebase(); // inicializamos los servicios de Firebase
 
-        this.hostname = "0.0.0.0";
         this.paths = {
             home: '/',
             auth: '/auth',
@@ -29,7 +28,7 @@ export default class Server {
     }
 
     listen() {
-        this.app.listen(this.app.get('port'), this.hostname, () => {
+        this.app.listen(this.app.get('port'), () => {
             console.log(`Servidor escuchado el puerto: ${this.app.get('port')}`);
         })
     }
